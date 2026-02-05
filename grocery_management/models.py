@@ -20,7 +20,7 @@ class Grocery(models.Model):
     category = models.CharField(
         max_length=3,
         choices=CATEGORY_CHOICES,
-        default='OTH'
+        default='OTH' 
     )
 
     price = models.DecimalField(max_digits=10, decimal_places=2)
