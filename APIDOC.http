@@ -1,0 +1,62 @@
+# api call for signup
+###
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username":"user4",
+    "email":"user@gmail.com",
+    "password":"user123"
+}
+
+
+# api call for create grocery
+###
+POST http://127.0.0.1:8000/grocery/
+Content-Type: application/json
+Authorization: Basic user2:user123
+
+{
+    "item_name": "Paper Towels",
+    "category": "OTH",
+    "price": "12.00",
+    "quantity": 1,
+    "expiry_date": "2029-12-31"
+}
+
+
+# api call for list grocery
+###
+GET http://127.0.0.1:8000/grocery/
+Accept: application/json
+Authorization: Basic user2:user123
+
+
+# api call for retrieve grocery
+###
+GET http://127.0.0.1:8000/grocery/4/
+Accept: application/json
+Authorization: Basic user2:user123
+
+
+
+# api call for update grocery
+###
+PUT http://127.0.0.1:8000/grocery/4/
+Content-Type: application/json
+Authorization: Basic user2:user123
+
+{
+    "item_name": "Cold Brew Coffee",
+    "category": "BEV",
+    "price": "5.50",
+    "quantity": 18,
+    "expiry_date": "2026-05-20"
+}
+
+
+
+# api call for delete grocery
+###
+DELETE http://127.0.0.1:8000/grocery/4/
+Authorization: Basic user2:user123

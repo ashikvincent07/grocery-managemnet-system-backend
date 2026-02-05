@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from grocery_management.views import UserSignupView, GroceryCreateListView, GroceryRetrieveUpdateDeleteView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', UserSignupView.as_view()),
+    path('grocery/', GroceryCreateListView.as_view()),
+    path('grocery/<int:pk>/', GroceryRetrieveUpdateDeleteView.as_view()),
 ]
