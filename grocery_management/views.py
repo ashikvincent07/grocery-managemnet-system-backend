@@ -9,6 +9,8 @@ from grocery_management.models import Grocery
 
 class UserSignupView(CreateAPIView):
 
+    permission_classes = [permissions.AllowAny]
+
     serializer_class = UserSerializer
 
 
