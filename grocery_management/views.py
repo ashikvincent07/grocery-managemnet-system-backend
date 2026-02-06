@@ -5,6 +5,7 @@ from rest_framework import authentication, permissions
 
 from grocery_management.serializers import UserSerializer, GrocerySerializer
 from grocery_management.models import Grocery
+from grocery_management.permissions import IsOwner
 
 
 class UserSignupView(CreateAPIView):
@@ -31,14 +32,12 @@ class GroceryCreateListView(CreateAPIView, ListAPIView):
 class GroceryRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
 
     authentication_classes = [authentication.TokenAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsOwner]
 
     serializer_class = GrocerySerializer
 
-    lookup_field = 'pk'
-
     def get_queryset(self):
-        return Grocery.objects.filter(owner=self.request.user)
+        return Grocery.objects.all()
     
 
 

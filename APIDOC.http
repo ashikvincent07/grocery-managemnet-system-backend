@@ -4,7 +4,7 @@ POST http://127.0.0.1:8000/register/
 Content-Type: application/json
 
 {
-    "username":"user4",
+    "username":"user5",
     "email":"user@gmail.com",
     "password":"user123"
 }
@@ -16,7 +16,7 @@ POST http://127.0.0.1:8000/token/
 Content-Type: application/json
 
 {
-    "username":"user",
+    "username":"user5",
     "password":"user123"
 }
 
@@ -25,7 +25,7 @@ Content-Type: application/json
 ###
 POST http://127.0.0.1:8000/grocery/
 Content-Type: application/json
-Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
+Authorization: Token 261f700073c7de81d39d5326ab20a1275da791d9
 
 {
     "item_name": "Paper Towels",
@@ -40,14 +40,14 @@ Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
 ###
 GET http://127.0.0.1:8000/grocery/
 Accept: application/json
-Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
+Authorization: Token 261f700073c7de81d39d5326ab20a1275da791d9
 
 
 # api call for retrieve grocery
 ###
-GET http://127.0.0.1:8000/grocery/4/
+GET http://127.0.0.1:8000/grocery/10/
 Accept: application/json
-Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
+Authorization: Token 261f700073c7de81d39d5326ab20a1275da791d9
 
 
 
@@ -55,7 +55,7 @@ Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
 ###
 PUT http://127.0.0.1:8000/grocery/4/
 Content-Type: application/json
-Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
+Authorization: Token 261f700073c7de81d39d5326ab20a1275da791d9
 
 {
     "item_name": "Cold Brew Coffee",
@@ -70,4 +70,4 @@ Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
 # api call for delete grocery
 ###
 DELETE http://127.0.0.1:8000/grocery/4/
-Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
+Authorization: Token 261f700073c7de81d39d5326ab20a1275da791d9
