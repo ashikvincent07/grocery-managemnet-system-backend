@@ -10,11 +10,22 @@ Content-Type: application/json
 }
 
 
+# api call for token generation
+###
+POST http://127.0.0.1:8000/token/
+Content-Type: application/json
+
+{
+    "username":"user",
+    "password":"user123"
+}
+
+
 # api call for create grocery
 ###
 POST http://127.0.0.1:8000/grocery/
 Content-Type: application/json
-Authorization: Basic user2:user123
+Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
 
 {
     "item_name": "Paper Towels",
@@ -29,14 +40,14 @@ Authorization: Basic user2:user123
 ###
 GET http://127.0.0.1:8000/grocery/
 Accept: application/json
-Authorization: Basic user2:user123
+Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
 
 
 # api call for retrieve grocery
 ###
 GET http://127.0.0.1:8000/grocery/4/
 Accept: application/json
-Authorization: Basic user2:user123
+Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
 
 
 
@@ -44,7 +55,7 @@ Authorization: Basic user2:user123
 ###
 PUT http://127.0.0.1:8000/grocery/4/
 Content-Type: application/json
-Authorization: Basic user2:user123
+Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59
 
 {
     "item_name": "Cold Brew Coffee",
@@ -59,4 +70,4 @@ Authorization: Basic user2:user123
 # api call for delete grocery
 ###
 DELETE http://127.0.0.1:8000/grocery/4/
-Authorization: Basic user2:user123
+Authorization: Token 6d64f7fbe3ff751eef15973ce976ebf1a2594d59

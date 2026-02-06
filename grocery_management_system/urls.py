@@ -19,9 +19,12 @@ from django.urls import path
 
 from grocery_management.views import UserSignupView, GroceryCreateListView, GroceryRetrieveUpdateDeleteView
 
+from rest_framework.authtoken.views import ObtainAuthToken
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', UserSignupView.as_view()),
     path('grocery/', GroceryCreateListView.as_view()),
     path('grocery/<int:pk>/', GroceryRetrieveUpdateDeleteView.as_view()),
+    path('token/', ObtainAuthToken.as_view()),
 ]

@@ -16,7 +16,7 @@ class UserSignupView(CreateAPIView):
 
 class GroceryCreateListView(CreateAPIView, ListAPIView):
 
-    authentication_classes = [authentication.BasicAuthentication]
+    authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
     serializer_class = GrocerySerializer
@@ -30,7 +30,7 @@ class GroceryCreateListView(CreateAPIView, ListAPIView):
 
 class GroceryRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
 
-    authentication_classes = [authentication.BasicAuthentication]
+    authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
     serializer_class = GrocerySerializer
