@@ -28,11 +28,11 @@ Content-Type: application/json
 Authorization: Token 261f700073c7de81d39d5326ab20a1275da791d9
 
 {
-    "item_name": "Paper Towels",
-    "category": "OTH",
-    "price": "12.00",
+    "item_name": "butter",
+    "category": "DAI",
+    "price": "40.00",
     "quantity": 1,
-    "expiry_date": "2029-12-31"
+    "expiry_date": "2025-12-31"
 }
 
 

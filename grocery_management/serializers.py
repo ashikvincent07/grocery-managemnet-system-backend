@@ -20,6 +20,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 class GrocerySerializer(serializers.ModelSerializer):
 
+    owner = serializers.SerializerMethodField()
+
     class Meta:
         model = Grocery
         fields = "__all__"
@@ -42,6 +44,19 @@ class GrocerySerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         return super().validate(attrs)
+    
+    greetings = serializers.SerializerMethodField()
+
+    def get_greetings(self, obj):
+        return "Thank You!"
+    
+    def get_owner(self, obj):
+
+        object_owner = obj.owner
+
+        serializer_instance = UserSerializer(object_owner)
+
+        return serializer_instance.data
     
     
     
